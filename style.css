@@ -1,3 +1,22 @@
 body{
+    font-family: Arial, sans-serif;
     background-color: black;
+    text-align: center;
+    margin:50px;
+}
+img{
+    max-width:100%;
+    height:auto;
+    margin-bottom: 20px;
+}
+.download-button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.download-button:hover {
+    background-color: #45a049;
 }

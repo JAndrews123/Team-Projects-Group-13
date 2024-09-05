@@ -11,14 +11,17 @@
 </head>
 <body>
     <h1>Download Image Section</h1>
-    <img src="image.jpg" alt="Sample Image" id="image">
-    <br>
-    <a href="image.jpg" download="downloaded_image.jpg" class="download-button">Download Image</a>
+    <button id="downloadBtn">Download Image</button>
+    <h2>View Video(s) section</h2>
+    <video width="640" height="360" controls>
+        <source src="" type="">
 
-    <!-- You can add more images below in the same format -->
-    <br><br>
-    <img src="another_image.jpg" alt="Another Image" id="another-image">
-    <br>
-    <a href="another_image.jpg" download="another_downloaded_image.jpg" class="download-button">Download Another Image</a>
+    </video>
 </body>
 </html>
+
+<script>
+    document.getElementById("downloadBtn").addEventListener('click', function() {
+        window.location.href = 'download.php';
+    })
+</script>

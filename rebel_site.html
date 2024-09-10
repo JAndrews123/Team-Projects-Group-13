@@ -10,18 +10,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Downloading Image(s) Section</h1>
-    <button id="downloadBtn">Download Image</button>
-    <h2>View Video(s) section</h2>
-    <video width="640" height="360" controls>
-        <source src="" type="">
+    <section>
+        <header>
+            <h1>Rebel Server Image and Video Website</h1>
+        </header>
+        <hr class="spacer">
+        <article>
+            <p>View deathstar images and related videos here</p>
+        </article>
+        <main>
+            <!--Image Containers-->
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <div class="img-container"><img src="" alt=""><button onclick="downloadImage('images/pic1.jpg')">Download</button></div>
+            <h2>View Video(s) section</h2>
+            <video width="640" height="360" controls>
+                <source src="" type="">
 
-    </video>
+            </video>
+        </main>
+        <footer>
+             <p> | Group 13 Team project 2024 | Wright state University</p>
+        </footer>
+    </section>
 </body>
 </html>
 
 <script>
-    document.getElementById("downloadBtn").addEventListener('click', function() {
-        window.location.href = 'download.php';
-    })
+    function downloadImage(imageSrc) {
+        const a = document.createElement('a');
+        a.href = imageSrc;
+        a.download = imageSrc.substring(imageSrc.lastIndexOf('/') + 1); // Set the file name based on the image path
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a); // Clean up after the click
+    }
 </script>

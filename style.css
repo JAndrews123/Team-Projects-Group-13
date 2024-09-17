@@ -28,10 +28,9 @@ img{
     width:100%;
     height:auto;
 }
-.vids{
-    border: black dotted 3px;
-    display:flex;
-    justify-content: flex-start;
+article embed{
+    float: left;
+    padding: 14px 14px;
 }
 spacer{
     margin: 0% 1%;
@@ -41,6 +40,9 @@ spacer{
 }
 @media(max-width: 600px){
     .img-container{
+        max-width: calc(50% - 10px);
+    }
+    .vids{
         max-width: calc(50% - 10px);
     }
 }

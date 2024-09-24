@@ -30,24 +30,7 @@
         }
     }
 
-    function formSub(event){
-        checkPassword();
-        createAccount();
-        return false;
-    }
-
     function createAccount() {
         window.location = "UserAcct.html"
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        if(localStorage.getItem(username)) {
-            alert("Username already exists")
-        }else if(username && password) {
-            localStorage.setItem(username, password);
-            alert("Account created succcessfully")
-        }
-        else{
-            alert("Enter username and/or password")
-        }
     }
 </script>

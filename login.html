@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form onsubmit="checkPassword(); return false;">
+        Username: <input type="text" id="username"><br><br>
+        Password: <input type="password" id="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+
+<script type="text/javascript">
+    function checkPassword() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username == "admin" && password == "12345") {
+            alert("Access granted");
+            window.location = "rebel_site.html"; // Redirect to protected page
+        } else {
+            alert("Incorrect username or password");
+        }
+    }
+</script>

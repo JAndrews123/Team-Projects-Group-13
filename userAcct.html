@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form onsubmit="UserAccount(); return false;">
+        Username: <input type="text" id="username"><br><br>
+        Password: <input type="password" id="password"><br><br>
+        <input type="button" value="Sign Up" onclick="UserAccount()">
+        <input type="button" value="return" onclick="loginReturn()">
+    </form>
+</body>
+</html>
+
+<script>
+    function UserAccount(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if(localStorage.getItem(username)) {
+            alert("Username already exists")
+        }else if(username && password) {
+            localStorage.setItem(username, password);
+            alert("Account created succcessfully")
+        }
+        else{
+            alert("Enter username and/or password")
+        }
+    }
+    function loginReturn(){
+        window.location = "login.html"
+    }
+</script>

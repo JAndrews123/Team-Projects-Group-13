@@ -12,6 +12,7 @@
         Username: <input type="text" id="username"><br><br>
         Password: <input type="password" id="password"><br><br>
         <input type="submit" value="Login">
+        <input type="button" value="Create Account" onclick="createAccount()">
     </form>
 </body>
 </html>
@@ -20,11 +21,33 @@
     function checkPassword() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        if (username == "admin" && password == "12345") {
+        var savedPasswd = localStorage.getItem(password);
+        if (savedPasswd == username) {
             alert("Access granted");
             window.location = "rebel_site.html"; // Redirect to protected page
         } else {
             alert("Incorrect username or password");
+        }
+    }
+
+    function formSub(event){
+        checkPassword();
+        createAccount();
+        return false;
+    }
+
+    function createAccount() {
+        window.location = "UserAcct.html"
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if(localStorage.getItem(username)) {
+            alert("Username already exists")
+        }else if(username && password) {
+            localStorage.setItem(username, password);
+            alert("Account created succcessfully")
+        }
+        else{
+            alert("Enter username and/or password")
         }
     }
 </script>

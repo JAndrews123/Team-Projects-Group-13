@@ -19,17 +19,18 @@
             <p>View deathstar images and related videos here</p>
         </article>
         <main>
-            <!--Image Containers-->
-            <div class="img-container"><img src="images/pic1.jpg" alt=""><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic2.gif" alt=""><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic1.jpg" alt=""><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic2.gif" alt=""><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic1.jpg" alt=""><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic2.gif" alt=""><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic1.jpg" alt=""><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic2.gif" alt=""><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic1.jpg" alt=""><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
-            <div class="img-container"><img src="images/pic2.gif" alt=""><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <!--Image Containers, where images of death star will be placed-->
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <!--Video section-->
             <article>
                 <embed src="https://www.youtube.com/embed/eEeGw4IH16A?si=TItMulv4IxxqPHba" width="380" height="250" type="">
                 <embed src="https://www.youtube.com/embed/eEeGw4IH16A?si=TItMulv4IxxqPHba" width="380" height="250" type="">
@@ -43,12 +44,15 @@
 </html>
 
 <script>
+    //function to allow download of images
     function downloadImage(imageSrc) {
         const a = document.createElement('a');
         a.href = imageSrc;
-        a.download = imageSrc.substring(imageSrc.lastIndexOf('/') + 1); // Set the file name based on the image path
+        //Set the file name based on the image path
+        a.download = imageSrc.substring(imageSrc.lastIndexOf('/') + 1); 
         document.body.appendChild(a);
         a.click();
-        document.body.removeChild(a); // Clean up after the click
+         //Clean up after the click
+        document.body.removeChild(a);
     }
 </script>

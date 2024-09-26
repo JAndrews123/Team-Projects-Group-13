@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>Login Page</h1>
-    <form onsubmit="checkPassword(); return false;">
+    <!--Section created to enter username and password, with option to create account if none-->
+    <form onsubmit="checkPassword(); return false;"> <!--handling form submission-->
         Username: <input type="text" id="username"><br><br>
         Password: <input type="password" id="password"><br><br>
         <input type="submit" value="Login">
@@ -18,18 +19,20 @@
 </html>
 
 <script type="text/javascript">
+    //verify password function
     function checkPassword() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         var savedPasswd = localStorage.getItem(password);
         if (savedPasswd == username) {
             alert("Access granted");
-            window.location = "rebel_site.html"; // Redirect to protected page
+            //Redirect to protected page
+            window.location = "rebel_site.html";
         } else {
             alert("Incorrect username or password");
         }
     }
-
+    //function to redirect to user account creation page
     function createAccount() {
         window.location = "UserAcct.html"
     }

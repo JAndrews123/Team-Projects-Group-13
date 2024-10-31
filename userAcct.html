@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create User Account</title>
+</head>
+<body>
+    <h1>Create an account</h1>
+    <div class="box">
+        <!--Section to enter new username and new password to create account and button to return to login page-->
+        <form onsubmit="UserAccount(); return false;"> <!--onsubmit tag to handle form submission-->
+            Enter Username: <input type="text" id="username"><br><br>
+            Enter Password: <input type="password" id="password"><br><br>
+            <input type="button" value="Sign Up" onclick="UserAccount()">
+            <input type="button" value="Return" onclick="loginReturn()">
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    //fucntion to create username and password and store them
+    function UserAccount(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if(localStorage.getItem(username)) {
+            alert("Username already exists")
+        }else if(username && password) {
+            localStorage.setItem(username, password);
+            alert("Account created succcessfully")
+        }
+        else{
+            alert("Enter username and/or password")
+        }
+    }
+    //fucntion to be redirected to login html
+    function loginReturn(){
+        window.location = "login.html"
+    }
+</script>

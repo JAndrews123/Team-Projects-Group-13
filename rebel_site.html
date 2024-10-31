@@ -10,18 +10,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Download Image Section</h1>
-    <button id="downloadBtn">Download Image</button>
-    <h2>View Video(s) section</h2>
-    <video width="640" height="360" controls>
-        <source src="" type="">
-
-    </video>
+    <section>
+        <header>
+            <h1>Rebel Server Image and Video Website</h1>
+        </header>
+        <hr class="spacer">
+        <article>
+            <p>View deathstar images and related videos here</p>
+        </article>
+        <main>
+            <!--Image Containers, where images of death star will be placed-->
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic1.jpg" alt="Death Star Image"><button onclick="downloadImage('images/pic1.jpg')" class="download-button">Download</button></div>
+            <div class="img-container"><img src="images/pic2.gif" alt="Death Star Image"><button onclick="downloadImage('images/pic2.gif')" class="download-button">Download</button></div>
+            <!--Video section-->
+            <article>
+                <embed src="https://www.youtube.com/embed/eEeGw4IH16A?si=TItMulv4IxxqPHba" width="480" height="270" type="">
+                <embed src="https://www.youtube.com/embed/eEeGw4IH16A?si=TItMulv4IxxqPHba" width="480" height="270" type="">
+            </article>
+        </main>
+        <footer>
+             <p>&copy; | Group 13 Team project 2024 | Wright state University</p>
+        </footer>
+    </section>
 </body>
 </html>
 
 <script>
-    document.getElementById("downloadBtn").addEventListener('click', function() {
-        window.location.href = 'download.php';
-    })
+    //function to allow download of images
+    function downloadImage(imageSrc) {
+        const a = document.createElement('a');
+        a.href = imageSrc;
+        //Set the file name based on the image path
+        a.download = imageSrc.substring(imageSrc.lastIndexOf('/') + 1); 
+        document.body.appendChild(a);
+        a.click();
+        //Clean up after the click
+        document.body.removeChild(a);
+    }
 </script>

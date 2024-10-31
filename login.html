@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
+</head>
+<body>
+    
+    <h1>Login Page</h1>
+    <div class="box">
+        <!--Section created to enter username and password, with option to create account if none-->
+        <form onsubmit="checkPassword(); return false;"> <!--handling form submission-->
+            Username: <input type="text" id="username"><br><br>
+            Password: <input type="password" id="password"><br><br>
+            <input type="submit" value="Login">
+            <input type="button" value="Create Account" onclick="createAccount()">
+        </form>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    //verify password function
+    function checkPassword() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var savedPasswd = localStorage.getItem(password);
+        if (savedPasswd == username) {
+            alert("Access granted");
+            //Redirect to protected page
+            window.location = "rebel_site.html";
+        } else {
+            alert("Incorrect username or password");
+        }
+    }
+    //function to redirect to user account creation page
+    function createAccount() {
+        window.location = "UserAcct.html"
+    }
+</script>

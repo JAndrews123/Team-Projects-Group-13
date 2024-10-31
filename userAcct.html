@@ -8,13 +8,15 @@
 </head>
 <body>
     <h1>Create an account</h1>
-    <!--Section to enter new username and new password to create account and button to return to login page-->
-    <form onsubmit="UserAccount(); return false;"> <!--onsubmit tag to handle form submission-->
-        Enter Username: <input type="text" id="username"><br><br>
-        Enter Password: <input type="password" id="password"><br><br>
-        <input type="button" value="Sign Up" onclick="UserAccount()">
-        <input type="button" value="Return" onclick="loginReturn()">
-    </form>
+    <div class="box">
+        <!--Section to enter new username and new password to create account and button to return to login page-->
+        <form onsubmit="UserAccount(); return false;"> <!--onsubmit tag to handle form submission-->
+            Enter Username: <input type="text" id="username"><br><br>
+            Enter Password: <input type="password" id="password"><br><br>
+            <input type="button" value="Sign Up" onclick="UserAccount()">
+            <input type="button" value="Return" onclick="loginReturn()">
+        </form>
+    </div>
 </body>
 </html>
 

@@ -123,7 +123,7 @@ spacer{
     }
     .leftColumn {
         border-right: none;
-        border-bottom: 3px solid blue;
+        border-bottom: 3px solid black;
         padding-right: 0;
         padding-bottom: 2rem;
     }

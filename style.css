@@ -1,11 +1,18 @@
 *{
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.loginBody{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family:Arial, sans-serif;
 }
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin:0;
     font-family:Arial, sans-serif;
 }
 header, footer, article{
@@ -21,25 +28,28 @@ main{
     padding: 20px;
     gap: 10px;
 }
-.LeftColumn{
-    height: auto;
-    width: 800px;
-    padding-left: 15px;
-    float: left;
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+.column{
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.leftColumn{
     border-right: 3px solid black;
-    margin-top: 40px;
+    padding-right: 2rem;
 }
-.RightColumn{
-    height: auto;
-    width: 460px;
-    padding-left: 15px;
-    float: right;
-    margin-top: 40px;
-    padding-bottom: 15px;
-}
-aside embed{
-    float:none;
-    
+.rightColumn{
+    padding-left: 2rem;
 }
 .img-container{
     flex: 1 1 200px;
@@ -60,17 +70,6 @@ spacer{
     height: .25em;
     background-color: #000;
     width:100%;
-}
-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    object-fit: cover;
 }
 .box{
     background-color: white;
@@ -99,7 +98,42 @@ video {
     font-weight: bold;
     cursor: pointer;
 }
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #1877f2;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #166fe5;
+}
 @media(max-width: 600px){
+    .container {
+        flex-direction: column;
+    }
+    .column {
+        max-width: 100%;
+    }
+    .leftColumn {
+        border-right: none;
+        border-bottom: 3px solid blue;
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
+    .rightColumn {
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+    .container2{
+        flex-direction: column;
+    }
     .img-container{
         max-width: calc(50% - 10px);
     }

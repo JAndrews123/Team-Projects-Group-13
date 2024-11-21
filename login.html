@@ -6,23 +6,26 @@
     <link rel="stylesheet" href="style.css">
     <title>Login Page</title>
 </head>
-<body>
-    <h1>Login Page</h1>
-    <article class="LeftColumn">
-        <div class="box" id="step1">
-            <!--Section created to enter username and password, with option to create account if none-->
-            <form id="loginForm" onsubmit="checkPassword(); return false;"> <!--handling form submission-->
-                Username: <input type="text" id="username"><br><br>
-                Password: <input type="password" id="password"><br><br>
-                <input type="submit" value="Next" onclick="twoFA()">
-                <input type="button" value="Create Account" onclick="createAccount()">
-            </form>
+<div class="loginBody">
+    <body>
+        <div class="container">
+            <div class="column leftColumn">
+                <div class="box" id="step1">
+                    <!--Section created to enter username and password, with option to create account if none-->
+                    <form id="loginForm" onsubmit="checkPassword(); return false;"> <!--handling form submission-->
+                        Username: <input type="text" id="username"><br><br>
+                        Password: <input type="password" id="password"><br><br>
+                        <input type="submit" value="Next" onclick="twoFA()">
+                        <input type="button" value="Create Account" onclick="createAccount()">
+                    </form>
+                </div>
+            </div>
+            <div class="column rightColumn">
+                <embed src="https://www.youtube.com/embed/F2sERCgDESE?si=M9MREG-6Vudg4zrl" width="480" height="270" type="">
+            </div>
         </div>
-    </article>
-    <aside class="RightColumn">
-        <embed src="https://www.youtube.com/embed/F2sERCgDESE?si=M9MREG-6Vudg4zrl" width="480" height="270" type="">
-    </aside>
-</body>
+    </body>
+</div>
 </html>
 
 <script type="text/javascript">
@@ -33,18 +36,18 @@
         var savedPasswd = localStorage.getItem(password);
         if (savedPasswd == username) {
             document.getElementById('step1')
-            //document.getElementById('step2')
+            document.getElementById('step2')
             alert("Password Authenticated");
         } else {
             alert("Incorrect username or password");
         }
     }
-    //second factor authentication through certificate authetication
+    //function to redirect second factor authentication through certificate authetication
     function twoFA() {
-        window.location = "2FA_Auth.html"
+        window.location = "2Factor.html"
     }
     //function to redirect to user account creation page
     function createAccount() {
         window.location = "UserAcct.html"
     }
-</script>
+</script> 
